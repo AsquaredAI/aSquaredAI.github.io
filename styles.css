@@ -110,11 +110,15 @@
     z-index: 2;
 }
 
+.hero-text {
+    max-width: 600px;  /* Control maximum width of text container */
+}
 .hero-text h1 {
     font-size: 48px;
     color: var(--primary-navy);
     margin-bottom: 20px;
     line-height: 1.2;
+    white-space: normal;  /* Ensure proper line breaks */
 }
 
 .hero-text .subheadline {
@@ -366,6 +370,10 @@
         grid-template-columns: 1fr;
         text-align: center;
     }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }    
 
     .features-grid {
         grid-template-columns: 1fr;
