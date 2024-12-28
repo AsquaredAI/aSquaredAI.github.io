@@ -47,6 +47,24 @@
     text-decoration: none;
     font-weight: 500;
 }
+.logo{
+    display:flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img{
+    height: 60px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-navy);
+    /* If you want the text lowercase like in the image */
+    text-transform: lowercase;
+}
 
 /* Hero Section */
 .hero {
