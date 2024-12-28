@@ -47,17 +47,6 @@
     text-decoration: none;
     font-weight: 500;
 }
-.logo{
-    display:flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img{
-    height: 60px;
-    width: auto;
-}
-
 .company-name {
     font-size: 24px;
     font-weight: 500;
@@ -65,6 +54,44 @@
     /* If you want the text lowercase like in the image */
     text-transform: lowercase;
 }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-unit img {
+    height: 50px;
+    width: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    margin-left: -4px;
+}
+
+.brand-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--primary-navy);
+    font-size: 20px;
+    text-transform: lowercase;
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
 
 /* Hero Section */
 .hero {
