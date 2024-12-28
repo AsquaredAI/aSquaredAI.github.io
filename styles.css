@@ -96,7 +96,9 @@
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    background: linear-gradient(to right, #fff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hiddent;
 }
 
 .hero-content {
@@ -104,6 +106,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text h1 {
@@ -118,13 +122,19 @@
     color: #666;
     margin-bottom: 40px;
 }
-
-.geometric-pattern {
-    width: 100%;
-    height: 400px;
-    background: var(--gradient-bg);
-    border-radius: 20px;
+.hero-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+.hero-illustration {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.1));
+}
+
 
 /* Features Section */
 .features {
@@ -144,16 +154,74 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    border-top: 4px solid transparent;
 }
 
+/* Feature title styles with Paris Olympics colors */
+.feature-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.feature-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    border-radius: 2px;
+}
+.feature-title.blue {
+    color: #4A90E2;
+}
+.feature-title.blue::after {
+    background: #4A90E2;
+}
+
+.feature-title.gold {
+    color: #D4AF37;
+}
+.feature-title.gold::after {
+    background: #D4AF37;
+}
+
+.feature-title.pink {
+    color: #FF69B4;
+}
+.feature-title.pink::after {
+    background: #FF69B4;
+}
+
+.feature-title.navy {
+    color: #1E2C4F;
+}
+.feature-title.navy::after {
+    background: #1E2C4F;
+}
+
+/* feature card hover effects*/
 .feature-card:hover {
     transform: translateY(-5px);
 }
 
-.feature-icon {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 20px;
+.feature-card:hover .feature-title.blue::after {
+    width: 80px;
+    transition: width 0.3s ease;
+}
+.feature-card:hover .feature-title.gold::after {
+    width: 80px;
+    transition: width 0.3s ease;
+}
+.feature-card:hover .feature-title.pink::after {
+    width: 80px;
+    transition: width 0.3s ease;
+}
+.feature-card:hover .feature-title.navy::after {
+    width: 80px;
+    transition: width 0.3s ease;
 }
 
 .feature-card h3 {
@@ -167,36 +235,72 @@
     line-height: 1.6;
 }
 
-/* Buttons */
-.btn-primary {
-    background: var(--primary-blue);
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
+/* Buttons Base Styles*/
+.btn-primary, .btn-outline {
+    font-size: 16px;
     font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 100px;  /* More rounded corners like Glean */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
+/* Primary Button (Filled)*/
+.btn-primary{
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 .btn-primary:hover {
     background: var(--primary-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.btn-secondary {
-    background: white;
+/* Outline Button */
+.btn-outline {
+    background: transparent;
     color: var(--primary-blue);
-    padding: 12px 24px;
     border: 2px solid var(--primary-blue);
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.btn-secondary:hover {
-    background: var(--primary-blue);
-    color: white;
+.btn-outline:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Navigation Specific Styles */
+.nav-demo {
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+/* Hero Section Demo Button */
+.hero .btn-primary {
+    font-size: 18px;
+    padding: 14px 28px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .btn-outline {
+        display: none;  /* Hide outline button on mobile */
+    }
+    
+    .nav-demo {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+/* Update modal button to match */
+.modal-content .btn-primary {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 100px;
+    margin-top: 24px;
 }
 
 /* Modal */
@@ -216,9 +320,10 @@
 .modal-content {
     background: white;
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 20px;
     max-width: 500px;
     width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);  /* Stronger shadow */
 }
 
 .close {
@@ -241,9 +346,18 @@
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 /* Responsive Design */
