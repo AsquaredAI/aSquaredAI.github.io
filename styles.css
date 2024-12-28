@@ -114,17 +114,22 @@
     max-width: 600px;  /* Control maximum width of text container */
 }
 .hero-text h1 {
-    font-size: 48px;
+    font-size: 56px;
     color: var(--primary-navy);
-    margin-bottom: 20px;
-    line-height: 1.2;
-    white-space: normal;  /* Ensure proper line breaks */
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;  /* Remove default margins */
+}
+
+.hero-text .second-line {
+    margin-bottom: 24px;  /* Add space before subheadline */
 }
 
 .hero-text .subheadline {
     font-size: 24px;
     color: #666;
     margin-bottom: 40px;
+    line-height: 1.4;
 }
 .hero-image {
     display: flex;
@@ -365,6 +370,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 48px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
@@ -372,8 +383,12 @@
     }
 
     .hero-text h1 {
-        font-size: 36px;
-    }    
+        font-size: 40px;
+    }   
+
+    .hero-text .subheadline{
+        font-size: 20px;
+    } 
 
     .features-grid {
         grid-template-columns: 1fr;
