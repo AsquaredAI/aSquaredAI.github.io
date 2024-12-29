@@ -105,10 +105,9 @@ html {
 /* Hero Section */
 .hero {
     min-height: 100vh; /* Makes hero section full viewport height */
-/*    padding: 120px 0 40px;*/
-    padding: 0;
+    padding: 120px 0 40px;
     display: flex; /* Enable flex for vertical centering */
-    align-items: center; /* Center content vertically */
+/*    align-items: center; /* Center content vertically */
     background: 
         linear-gradient(
             135deg,
@@ -155,8 +154,8 @@ html {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: flex-start; /* Align items to top instead of center */
+    gap: 40px;
+    align-items: center; 
     position: relative;
     padding-top: 40px; /* Add some top padding to the content */
     z-index: 2;
