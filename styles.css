@@ -104,7 +104,11 @@ html {
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 40px;
+    min-height: 100vh; /* Makes hero section full viewport height */
+/*    padding: 120px 0 40px;*/
+    padding: 0;
+    display: flex; /* Enable flex for vertical centering */
+    align-items: center; /* Center content vertically */
     background: 
         linear-gradient(
             135deg,
@@ -118,6 +122,12 @@ html {
     overflow: hiddent;
 }
 
+/* Adjust the container within hero for proper spacing */
+.hero .container {
+    padding-top: 80px; /* Account for fixed navbar */
+    padding-bottom: 40px;
+    width: 100%;
+}
 /* Add this for a subtle animated gradient effect */
 .hero::before {
     content: '';
@@ -149,6 +159,7 @@ html {
     align-items: center;
     position: relative;
     z-index: 2;
+    margin: 0 auto; /* Center the content */
 }
 
 @keyframes gradientShift {
@@ -165,6 +176,7 @@ html {
 
 .hero-text {
     max-width: 600px;  /* Control maximum width of text container */
+    padding-right: 20px; /* Give some breathing room */
 }
 
 .hero-text h1 {
@@ -195,6 +207,7 @@ html {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    max-height: 80vh; /* Prevent image from being too large */
 }
 
 .hero-illustration {
