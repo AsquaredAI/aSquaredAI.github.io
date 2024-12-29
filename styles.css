@@ -155,11 +155,11 @@ html {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    gap: 80px;
+    align-items: flex-start; /* Align items to top instead of center */
     position: relative;
+    padding-top: 40px; /* Add some top padding to the content */
     z-index: 2;
-    margin: 0 auto; /* Center the content */
 }
 
 @keyframes gradientShift {
@@ -176,20 +176,29 @@ html {
 
 .hero-text {
     max-width: 600px;  /* Control maximum width of text container */
-    padding-right: 20px; /* Give some breathing room */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px; /* Add top padding to align with image */
 }
 
 .hero-text h1 {
-    font-size: 54px;
+    font-size: 56px;
     font-weight: 700;
     color: var(--primary-navy);
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 24px;
-    display: inline-block;
+/*    display: inline-block;*/
 }
 
 .hero-text h1 span {
-    display: inline-block;
+    display: block; /* Forces each span to its own line */
+}
+
+
+.headline-first,
+.headline-second {
+    margin-bottom: 8px; /* Space between lines */
 }
 
 .hero-text h1 br {
