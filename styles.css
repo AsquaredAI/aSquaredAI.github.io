@@ -115,7 +115,7 @@
 }
 
 .hero-text h1 {
-    font-size: 50px;
+    font-size: 54px;
     font-weight: 700;
     color: var(--primary-navy);
     line-height: 1.1;
@@ -379,7 +379,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-text h1 {
-        font-size: 48px;
+        font-size: 54px;
     }
 }
 
