@@ -118,14 +118,16 @@
     font-size: 56px;
     font-weight: 700;
     color: var(--primary-navy);
-    line-height: 1.2;
+    line-height: 1.1;
     margin-bottom: 24px;
 }
 
-.hero-text br {
-    display: block;
-    content: "";
-    margin-top: 8px;
+.hero-text h1 span {
+    display: inline-block;
+}
+
+.hero-text h1 br {
+    height: 0;
 }
 
 .hero-text .subheadline {
