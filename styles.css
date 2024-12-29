@@ -17,6 +17,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -212,6 +216,7 @@
         var(--light-blue) 75%,
         var(--soft-pink) 100%
     );
+    scroll-margin-top: 80px;
 }
 
 .features::before {
@@ -246,17 +251,19 @@
 
 .feature-card {
     padding: 30px;
-    background: rgba(255, 255, 255, 0.9); /* More translucent background */
+    background: rgba(255, 255, 255, 0.7); /* More translucent background */
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: none;
-    backdrop-filter: blur(8px); /* Add glass effect */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /* Feature title styles with Paris Olympics colors */
@@ -466,6 +473,33 @@
     outline: none;
     border-color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+
+/* Footer */
+.footer {
+    background: var(--nav-bg);
+    padding: 20px 0;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+    backdrop-filter: blur(8px);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-navy);
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: var(--primary-navy);
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
 }
 
 /* Responsive Design */
