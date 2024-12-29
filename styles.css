@@ -120,6 +120,7 @@
     color: var(--primary-navy);
     line-height: 1.1;
     margin-bottom: 24px;
+    display: inline-block;
 }
 
 .hero-text h1 span {
