@@ -113,16 +113,19 @@
 .hero-text {
     max-width: 600px;  /* Control maximum width of text container */
 }
+
 .hero-text h1 {
     font-size: 56px;
-    color: var(--primary-navy);
     font-weight: 700;
-    line-height: 1.1;
-    margin: 0;  /* Remove default margins */
+    color: var(--primary-navy);
+    line-height: 1.2;
+    margin-bottom: 24px;
 }
 
-.hero-text .second-line {
-    margin-bottom: 24px;  /* Add space before subheadline */
+.hero-text br {
+    display: block;
+    content: "";
+    margin-top: 8px;
 }
 
 .hero-text .subheadline {
@@ -131,6 +134,7 @@
     margin-bottom: 40px;
     line-height: 1.4;
 }
+
 .hero-image {
     display: flex;
     justify-content: flex-end;
