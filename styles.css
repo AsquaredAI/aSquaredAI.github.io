@@ -100,7 +100,7 @@
 
 /* Hero Section */
 .hero {
-    padding: 120px 0 80px;
+    padding: 120px 0 40px;
     background: 
         linear-gradient(
             135deg,
@@ -203,27 +203,60 @@
 
 /* Features Section */
 .features {
-    padding: 80px 0;
+    padding: 60px 0;
     background: linear-gradient(
-        180deg,
+        135deg,
         var(--light-blue) 0%,
-        #FFFFFF 100%
+        var(--soft-pink) 25%,
+        var(--soft-gold) 50%,
+        var(--light-blue) 75%,
+        var(--soft-pink) 100%
     );
 }
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(
+            45deg,
+            rgba(74, 144, 226, 0.1) 0%,
+            rgba(255, 105, 180, 0.1) 25%,
+            rgba(212, 175, 55, 0.1) 50%,
+            rgba(74, 144, 226, 0.1) 75%,
+            rgba(255, 105, 180, 0.1) 100%
+        );
+    filter: blur(50px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .feature-card {
     padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    border-top: 4px solid transparent;
+    background: rgba(255, 255, 255, 0.9); /* More translucent background */
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: none;
+    backdrop-filter: blur(8px); /* Add glass effect */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
 }
 
 /* Feature title styles with Paris Olympics colors */
@@ -350,6 +383,12 @@
 .hero .btn-primary {
     font-size: 18px;
     padding: 14px 28px;
+}
+
+.hero, .features {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 /* Responsive adjustments */
